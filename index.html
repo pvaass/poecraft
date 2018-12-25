@@ -747,7 +747,10 @@
                             return true;
                         }
 
-                        return item.title.toLowerCase().includes(search.toLowerCase());
+
+                        var isTitle = item.title.toLowerCase().includes(search.toLowerCase());
+                        var isLoc = item.loc.toLowerCase().includes(search.toLowerCase());
+                        return isTitle || isLoc;
                     })
 
                     var ordered = filtered.sort(function (a, b) {
